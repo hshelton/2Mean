@@ -32,7 +32,6 @@ export class AdminUserForm {
     private notificationsService: NotificationsService)
   { }
 
-
   ngOnInit() {
     this.roleService.getRoles().subscribe(data => {
       this.roles = data;
@@ -48,7 +47,6 @@ export class AdminUserForm {
 
   //open up the user edit modal for the selected user
   open(content: any) {
-
     this.modalService.open(content).result.then((result) => {
       //the modal can be closed with a button, by clicking on the backdrop, or by clicking submit
       if (this.getDismissReason(result) == "Submission") {
@@ -111,6 +109,7 @@ export class AdminUserForm {
     clickToClose: true,
     maxLength: 50
   };
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
